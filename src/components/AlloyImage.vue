@@ -1,9 +1,53 @@
 <template>
   <div class="alloy-image">
-    <img ref="logo" id="logo" src="../assets/img/logo.png">
 
-    <img ref="logo1" id="logo" src="../assets/img/logo1.png">
-    <el-slider v-model="brightValue" @change="changeBrightness"></el-slider>
+    <el-row>
+        <el-col :span="12">
+            <img ref="logo" id="logo" src="../assets/img/seal.png" width="200">    
+        </el-col>
+        <el-col :span="12">
+            <div ref="preview" class="preview">
+
+            </div>
+
+
+            <div class="bar">
+                <el-row>
+                    <el-col :span="6">
+                        <span>亮度：</span>
+                    </el-col>
+                    <el-col :span="18">
+                        <el-slider 
+                            v-model="brightValue" 
+                            :min="-0.5"
+                            :max="1.5"
+                            :step="0.001"
+                            :format-tooltip="formatBrightness"
+                            input-size="mini"
+                            @change="changeBrightness">
+                        </el-slider>
+                    </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-col :span="6">
+                        <span>对比度：</span>
+                    </el-col>
+                    <el-col :span="18">
+                        <el-slider 
+                            v-model="contrastValue" 
+                            :min="0"
+                            :max="1"
+                            :step="0.001"
+                            :format-tooltip="formatContrast"
+                            input-size="mini"
+                            @change="changeContrast">
+                        </el-slider>
+                    </el-col>
+                </el-row>
+            </div>
+        </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -14,47 +58,65 @@ export default {
     name: 'AlloyImage',
     data: function() {
         return {
-            brightValue: 50,
+            $image: null,
+            $preview: null,
+            brightValue: 0.5,
+            contrastValue: 0.5,
         };
     },
     created() {
 
     },
     mounted() {
-        this.initAI();
+        this.$image = this.$refs.logo;
+        this.$preview = this.$refs.preview;
     },
     methods: {
-        initAI() {
-            var img = document.getElementsByTagName("img")[1];
-            img.onload = function() {
-                //var AlloyImageObj = AlloyImage(this);
-
-                // AlloyImage(this).act("灰度处理").add(//添加一个图层上去
-                //         AlloyImage(this).act("灰度处理").act("反色").act("高斯模糊",5) , "颜色减淡"  
-                // ).act("锐化").show();
-
-                console.log('this:', this);
-                console.log('AlloyImage(this):', AlloyImage(this));
-
-                // 亮度、对比度
-                AlloyImage(this).act("brightness", 10, 20).replace(this);
-
-                // 锐化
-                AlloyImage(this).act("sharp", 10).show();
-
-                // 反色
-                //AlloyImage(this).act("toGray").show();
-            };
+        // 亮度格式化
+        formatBrightness(val) {
+            return (val - 0.5).toFixed(3);
         },
+        // 对比度格式化
+        formatContrast(val) {
+            return (val - 0.5).toFixed(3);
+        },
+        // 调节亮度
         changeBrightness(val) {
-            let $logo =  this.$refs.logo1;
+            let H = 0.5;
+            let S = 0.5;
+            let I = val;
 
-            AlloyImage($logo).act('brightness', 10, 20).replace($logo);
-        }
+            console.log('亮度 I:', I);
+
+            //换算成正常的值
+            H = (H - 0.5) * 360;
+            S = (S - 0.5) * 100;
+            I = (I - 0.5) * 100;
+
+            AlloyImage(this.$image).act('setHSI', H, S, I, 0).replaceChild(this.$preview);
+        },
+        // 调节亮度
+        changeContrast(val) {
+            let $preview =  this.$refs.preview;
+
+            let D = val;
+            D = (D - 0.5) * 100;
+
+            console.log('brightness:', this.brightValue);
+
+            AlloyImage(this.$image).act('brightness', this.brightValue, D).replaceChild(this.$preview);
+        },
     }
 };
 </script>
 
-<style>
-
+<style scoped>
+    .alloy-image {
+        width: 900px;
+        margin: 0 auto;
+    }
+    .preview {
+        width: 200px;
+        height: 200px;
+    }
 </style>

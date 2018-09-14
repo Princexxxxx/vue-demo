@@ -6,10 +6,7 @@
             <img ref="logo" id="logo" src="../assets/img/seal.png" width="200">    
         </el-col>
         <el-col :span="12">
-            <div ref="preview" class="preview">
-
-            </div>
-
+            <div ref="preview" class="preview"></div>
 
             <div class="bar">
                 <el-row>
@@ -45,6 +42,8 @@
                         </el-slider>
                     </el-col>
                 </el-row>
+
+                <el-button type="primary" plain @click="save">保存</el-button>
             </div>
         </el-col>
     </el-row>
@@ -106,6 +105,13 @@ export default {
 
             AlloyImage(this.$image).act('brightness', this.brightValue, D).replaceChild(this.$preview);
         },
+        // 生成图片base64
+        save() {
+            let $canvas = document.getElementsByTagName('canvas')[0];
+            let imgData = AlloyImage($canvas).save();
+
+            alert(imgData);
+        }
     }
 };
 </script>

@@ -5,13 +5,13 @@
         <!-- postMessage -->
         <post-message></post-message>
 
-        <HelloWorld :title.sync="title"></HelloWorld>
-        <check-box-demo></check-box-demo>
+        <!-- <HelloWorld :title.sync="title"></HelloWorld>
+        <check-box-demo></check-box-demo> -->
 
-        <p>span-a: {{obj.a}}</p>
+        <!-- <p>span-a: {{obj.a}}</p>
         <p>span-b: {{obj.c}}</p>
 
-        <p>{{ JSON.stringify(arrA) }}</p>
+        <p>{{ JSON.stringify(arrA) }}</p> -->
 
         <!-- vue-lazyload -->
         <!-- <lazy-load></lazy-load> -->

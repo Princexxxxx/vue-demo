@@ -4,7 +4,7 @@
 
         <ul>
             <li v-for="(img, index) in new Array(16)" :key="index">
-                <img v-lazy="`https://www.qiyuesuo.me/img/about/logo/partner${index + 1}.png`">
+                <img height=600 v-lazy="{ src: `https://www.qiyuesuo.me/img/about/logo/partner${index + 1}.png`, loading: 'https://cdn.qiyuesuo.com/img/icon/contract_placeholder.png'} "/>
             </li>
         </ul>
     </div>

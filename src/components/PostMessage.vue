@@ -9,7 +9,7 @@
             title="Inline Frame Example"
             width="1200"
             height="1000"
-            src="http://localhost:8086/appoint/2581738679465804152?noSend=true"
+            :src="iframeUrl"
         ></iframe>
     </div>
 </template>
@@ -20,7 +20,9 @@ import P from '../assets/js/postMessage.js'
 export default {
     data: function() {
         return {
-            iframeUrlOrigin: 'http://localhost:8086'
+            viewToken: '2abd91ee-0583-416a-8536-65488065c185', // iframe src
+            iframeUrlOrigin: 'http://privapp.qiyuesuo.me', // iframe origin
+            timeStamp: new Date().getTime()
         };
     },
     created() {
@@ -32,7 +34,11 @@ export default {
         }, false);
     },
     mounted() {},
-    computed: {},
+    computed: {
+        iframeUrl() {
+            return `http://privapp.qiyuesuo.me/appoint?viewToken=${this.viewToken}&panel=CONTRACT&noSend=true`;
+        }
+    },
     methods: {
         sendPost() {
             // 调用SDK方法

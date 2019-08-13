@@ -30,17 +30,19 @@
         </el-popover>
 
         <el-popover
-            ref="click"
+            ref="popRef"
             placement="top"
             title="标题"
             width="200"
-            trigger="click"
+            trigger="manual"
+            v-model="showPopover"
             content="奥术大师大所多">
+                <a @click="changePop">change Pop</a>
         </el-popover>
 
-        <el-button id="aaa" type="text">aaaaaaaaaaaaaa</el-button>
+        <el-button id="aaa" type="text">new Popover</el-button>
 
-        <el-button id="bbb" type="text" click="changePop">bbb</el-button>
+        <el-button id="bbb" type="text">Old Popover</el-button>
 
         <a @click="changeTitle" style="color:red;">changeTitle: {{title}}</a>
 	</div>
@@ -60,22 +62,33 @@ export default {
     data() {
         return {
             msg: '我是父组件',
-            messageList: []
+            messageList: [],
+            showPopover: false
         };
     },
     created() {
         this.initMsg();
     },
+    mounted() {
+        this.$refs.popRef.referenceElm = document.getElementById('bbb');
+        // this.$refs.popRef.showPopper = true;
+
+        this.showPopover = true;
+    },
     methods: {
-        changeTitle() {
-            this.$emit('update:title', new Date().getTime());
-        },
         // test
         changePop() {
-            this.$refs.click.showPopper = false;
-            this.$refs.click.showPopper = true;
+            // this.$refs.popRef.showPopper = false;
+            this.showPopover = false;
 
-            this.$refs.click.referenceElm = document.getElementById('aaa');
+            this.$refs.popRef.referenceElm = document.getElementById('aaa');
+
+            setTimeout(() => {
+                this.showPopover = true;
+            }, 300);
+        },
+        changeTitle() {
+            this.$emit('update:title', new Date().getTime());
         },
         initMsg() {
             this.addMsg();

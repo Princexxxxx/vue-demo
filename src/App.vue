@@ -3,10 +3,10 @@
         <img ref="logo" id="logo" src="./assets/img/logo.png">
 
         <!-- postMessage -->
-        <post-message></post-message>
+        <!-- <post-message></post-message> -->
 
-        <!-- <HelloWorld :title.sync="title"></HelloWorld>
-        <check-box-demo></check-box-demo> -->
+        <HelloWorld :title.sync="title"></HelloWorld>
+        <!-- <check-box-demo></check-box-demo> -->
 
         <!-- <p>span-a: {{obj.a}}</p>
         <p>span-b: {{obj.c}}</p>

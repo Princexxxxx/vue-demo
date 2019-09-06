@@ -1,11 +1,11 @@
 <template>
     <div id="app">
-        <img ref="logo" id="logo" src="./assets/img/logo.png">
+        <!-- <img ref="logo" id="logo" src="./assets/img/logo.png"> -->
 
         <!-- postMessage -->
         <!-- <post-message></post-message> -->
 
-        <HelloWorld :title.sync="title"></HelloWorld>
+        <!-- <HelloWorld :title.sync="title"></HelloWorld> -->
         <!-- <check-box-demo></check-box-demo> -->
 
         <!-- <p>span-a: {{obj.a}}</p>
@@ -15,6 +15,9 @@
 
         <!-- vue-lazyload -->
         <!-- <lazy-load></lazy-load> -->
+
+
+        <Diff></Diff>
     </div>
 </template>
 
@@ -23,6 +26,7 @@ import HelloWorld from './components/HelloWorld';
 import CheckBoxDemo from './components/CheckBoxDemo';
 import LazyLoad from './components/LazyLoad';
 import PostMessage from './components/PostMessage';
+import Diff from './components/Diff';
 
 export default {
     name: 'App',
@@ -30,7 +34,8 @@ export default {
         HelloWorld,
         CheckBoxDemo,
         LazyLoad,
-        PostMessage
+        PostMessage,
+        Diff
     },
     data: function() {
         return {
@@ -87,6 +92,10 @@ export default {
 </script>
 
 <style>
+@import '../node_modules/froala-editor/css/froala_style.min.css';
+@import '../node_modules/froala-editor/css/froala_editor.pkgd.min.css';
+/* @import '../node_modules/font-awesome/css/font-awesome.min.css'; */
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

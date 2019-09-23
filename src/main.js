@@ -24,10 +24,3 @@ new Vue({
     el: '#app',
     render: h => h(App)
 })
-
-/* 需要编译器 */
-// new Vue({
-//   el: '#app',
-//   template: '<App/>',
-//   components: { App }
-// })

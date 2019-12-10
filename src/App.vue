@@ -16,8 +16,9 @@
         <!-- vue-lazyload -->
         <!-- <lazy-load></lazy-load> -->
 
+        <!-- <Diff></Diff> -->
 
-        <Diff></Diff>
+        <router-view></router-view>
     </div>
 </template>
 

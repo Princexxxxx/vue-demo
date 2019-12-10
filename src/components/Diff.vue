@@ -9,13 +9,19 @@
         <p>
             <a @click="showDiffResult">Show Diff</a>
         </p>
+
+        <router-link :to="{ name: 'Hello' }">Go Hello Page</router-link>
     </div>
 </template>
 
 <script>
+import IntervalMixin from '../mixins/interval';
+
 export default {
+    mixins: [IntervalMixin],
     data() {
         return {
+            intervalId: null, // 定时器序号
             diffResult: null,
             config: {
                 pluginsEnabled: [
@@ -55,7 +61,11 @@ export default {
     mounted() {
         this.initEditor();
     },
-    created() {},
+    created() {
+        this.intervalId = setInterval(() => {
+            console.log('interval msg from diff page');
+        }, 1000);
+    },
     computed: {},
     watch: {},
     methods: {

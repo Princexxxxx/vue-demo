@@ -14,10 +14,14 @@
 		<a @click="updateFromChild($event, 'man')">子组件修改消息</a>
 
 		<a @click="updateMessage">子组件修改message</a>
+
+        <router-link :to="{ name: 'DiffDom' }">Go Diff Page</router-link>
 	</div>
 </template>
 
 <script>
+import IntervalMixin from '../mixins/interval';
+
 export default {
     props: {
 		message: {
@@ -31,17 +35,23 @@ export default {
 			type: Function
 		}
     },
+    mixins: [IntervalMixin],
     name: 'hello',
     data() {
         return {
 			msg: '我是子组件',
-			privateMsg: '子组件的私有消息',
+            privateMsg: '子组件的私有消息',
+            intervalId: null, // 定时器序号
         };
 	},
 	created() {
-		this.msgLog(() => {
-			console.log(this.privateMsg);
-		});
+		// this.msgLog(() => {
+		// 	console.log(this.privateMsg);
+        // });
+
+        this.intervalId = setInterval(() => {
+            console.log('interval msg from hello page');
+        }, 1000);
 	},
 	methods: {
 		updateFromChild(event, type) {
@@ -49,7 +59,7 @@ export default {
                 name: Date.now()
             }
 
-			this.$set(this.msgList, 0, msg);		
+			this.$set(this.msgList, 0, msg);
 		},
 		updateMessage() {
 			this.$emit('updateMessage', '我是修改过的message');

@@ -1,0 +1,175 @@
+{
+    "data": [
+        {
+            "id": "25158508820579123",
+            "name": "法人单位A",
+            "children": [
+                {
+                    "childId": "2576031164605243847",
+                    "category": "人事合同",
+                    "creator": "\u674E\u5609\u83F2",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-06-11 19:48:10",
+                    "updateTime": "2019-06-11 19:48:10",
+                    "templateType": "FOLDER",
+                    "child": false
+                }
+            ],
+            "child": true
+        },
+        {
+            "id": "25158508820579126",
+            "name": "法人单位B",
+            "children": [
+                {
+                    "childId": "2576031164605243847",
+                    "category": "采购合同",
+                    "creator": "\u674E\u5609\u83F2",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-06-11 19:48:10",
+                    "updateTime": "2019-06-11 19:48:10",
+                    "templateType": "FOLDER",
+                    "child": false
+                },
+                {
+                    "childId": "2580699879569957622",
+                    "category": "劳动合同",
+                    "creator": "\u9093\u831C\u831C",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-06-24 16:59:58",
+                    "updateTime": "2019-06-24 16:59:58",
+                    "templateType": "FOLDER",
+                    "child": true
+                }
+            ],
+            "child": true
+        },
+        {
+            "id": "25158508820591232",
+            "name": "法人单位C",
+            "children": [
+                {
+                    "childId": "2615553502166229136",
+                    "category": "买卖合同",
+                    "creator": "\u6C88\u6587\u5F3A",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-09-28 21:15:50",
+                    "updateTime": "2019-09-28 21:15:50",
+                    "templateType": "FOLDER",
+                    "child": true
+                },
+                {
+                    "childId": "2624612836676583574",
+                    "category": "销售合同",
+                    "creator": "\u5B63\u4F20",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-10-23 21:14:23",
+                    "updateTime": "2019-10-23 21:14:23",
+                    "templateType": "FOLDER",
+                    "child": false
+                },
+                {
+                    "childId": "2628796559219344053",
+                    "category": "法务合同",
+                    "creator": "\u59DC\u4E15\u622C",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-11-04 10:19:00",
+                    "updateTime": "2019-11-04 10:19:00",
+                    "templateType": "FOLDER",
+                    "child": false
+                }
+            ],
+            "child": true
+        },
+        {
+            "id": "2515850882057912326",
+            "name": "法人单位D",
+            "children": [
+                {
+                    "childId": "2576031164605243847",
+                    "category": "项目合同",
+                    "creator": "\u674E\u5609\u83F2",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-06-11 19:48:10",
+                    "updateTime": "2019-06-11 19:48:10",
+                    "templateType": "FOLDER",
+                    "child": false
+                },
+                {
+                    "childId": "2580699879569957622",
+                    "category": "印控合同",
+                    "creator": "\u9093\u831C\u831C",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-06-24 16:59:58",
+                    "updateTime": "2019-06-24 16:59:58",
+                    "templateType": "FOLDER",
+                    "child": true
+                },
+                {
+                    "childId": "2594445275085697464",
+                    "category": "财务合同",
+                    "creator": "\u6C88\u6587\u5F3A",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-08-01 15:19:16",
+                    "updateTime": "2019-08-01 15:19:16",
+                    "templateType": "FOLDER",
+                    "child": true
+                },
+                {
+                    "childId": "2611547840868286830",
+                    "category": "人事合同",
+                    "creator": "\u59DC\u4E15\u622C",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-09-17 19:58:45",
+                    "updateTime": "2019-09-17 19:58:45",
+                    "templateType": "FOLDER",
+                    "child": false
+                },
+                {
+                    "childId": "2615553502166229136",
+                    "category": "再见合同",
+                    "creator": "\u6C88\u6587\u5F3A",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-09-28 21:15:50",
+                    "updateTime": "2019-09-28 21:15:50",
+                    "templateType": "FOLDER",
+                    "child": true
+                },
+                {
+                    "childId": "2624612836676583574",
+                    "category": "人事合同",
+                    "creator": "\u5B63\u4F20",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-10-23 21:14:23",
+                    "updateTime": "2019-10-23 21:14:23",
+                    "templateType": "FOLDER",
+                    "child": false
+                },
+                {
+                    "childId": "2628796559219344053",
+                    "category": "人事合同",
+                    "creator": "\u59DC\u4E15\u622C",
+                    "companyId": "2515850882057912326",
+                    "levels": 1,
+                    "createTime": "2019-11-04 10:19:00",
+                    "updateTime": "2019-11-04 10:19:00",
+                    "templateType": "FOLDER",
+                    "child": false
+                }
+            ],
+            "child": true
+        }
+    ]
+}

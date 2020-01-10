@@ -18,6 +18,8 @@
 
         <!-- <Diff></Diff> -->
 
+        <Table></Table>
+
         <router-view></router-view>
     </div>
 </template>
@@ -28,6 +30,7 @@ import CheckBoxDemo from './components/CheckBoxDemo';
 import LazyLoad from './components/LazyLoad';
 import PostMessage from './components/PostMessage';
 import Diff from './components/Diff';
+import Table from './components/Table';
 
 export default {
     name: 'App',
@@ -36,7 +39,8 @@ export default {
         CheckBoxDemo,
         LazyLoad,
         PostMessage,
-        Diff
+        Diff,
+        Table
     },
     data: function() {
         return {

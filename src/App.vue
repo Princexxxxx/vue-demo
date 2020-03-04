@@ -18,7 +18,7 @@
 
         <!-- <Diff></Diff> -->
 
-        <Table></Table>
+        <!-- <Table></Table> -->
 
         <router-view></router-view>
     </div>

@@ -15,6 +15,11 @@ const router = new Router({
             path: '/hello',
             name: 'Hello',
             component: require('../components/Hello.vue').default
+        },
+        {
+            path: '/postmessage',
+            name: 'Hello',
+            component: require('../components/PostMessage.vue').default
         }
     ]
 });

@@ -8,7 +8,7 @@
             id="appoint-page"
             title="Inline Frame Example"
             width="1200"
-            height="1000"
+            :height="iframeHeight"
             :src="iframeUrl"
         ></iframe>
     </div>
@@ -21,22 +21,23 @@ export default {
     data: function() {
         return {
             viewToken: '2abd91ee-0583-416a-8536-65488065c185', // iframe src
-            iframeUrlOrigin: 'http://privapp.qiyuesuo.me', // iframe origin
+            iframeUrlOrigin: 'http://192.168.52.121:8099', // iframe origin
+            iframeHeight: 200,
             timeStamp: new Date().getTime()
         };
     },
     created() {
-        // 监听跨域请求的返回
+        // 监听要点参数页面真实高度用于设置iframe height
         window.addEventListener('message', (event) => {
             if(event.origin == this.iframeUrlOrigin) {
-                console.log('保存草稿回调', event.data);
+                this.iframeHeight = event.data.iframeHeight;
             }
         }, false);
     },
     mounted() {},
     computed: {
         iframeUrl() {
-            return `http://privapp.qiyuesuo.me/appoint?viewToken=${this.viewToken}&panel=CONTRACT&noSend=true`;
+            return `http://192.168.52.121:8099/appoint?viewToken=3fc69f88-e578-4b67-ae9b-2d754d63cb2e&panel=POINT`;
         }
     },
     methods: {

@@ -13,7 +13,7 @@
     "diff": "^4.0.1",
     "diff-dom": "^4.1.6",
     "froala-editor": "^3.0.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "qys-pdf": "^1.0.6",
     "vue": "^2.5.2",
     "vue-lazyload": "^1.2.6",
